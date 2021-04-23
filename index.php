@@ -37,8 +37,13 @@
 			<h1>CRUD</h1>
 		</div>		
 
-		<div class="mt-4 mb-4">
-			<button type="button" class="btn btn-primary" id="create" data-toggle="modal">Tambah Data</button>
+		<div class="row">
+			<div class="mt-4 mb-4">
+				<button type="button" class="btn btn-primary" id="create" data-toggle="modal">Tambah Data</button>
+			</div>
+			<div class="mt-4 mb-4 ml-3">
+				<a href="map.php" target="_blank"><button type="button" class="btn btn-primary">Lihat Data Map</button></a>
+			</div>
 		</div>		
 
 		<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modelHeading" aria-hidden="true">
@@ -238,8 +243,7 @@
 							$('#nama').val(data[0].nama);
 							$('#alamat').val(data[0].alamat);
 							$('#tipe').val(data[0].tipe);
-
-							// alert(data[0].nis);
+							
 						}
 					},
 					error: function() {
