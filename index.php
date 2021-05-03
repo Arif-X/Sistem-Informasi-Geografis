@@ -6,6 +6,7 @@
 	<link href="lib/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="lib/lib/datatables/DataTables-1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 	<link href="lib/lib/datatables/FixedColumns-3.3.2/css/fixedColumns.bootstrap4.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<script src="lib/lib/datatables/jQuery-3.3.1/jquery-3.3.1.min.js"></script>
 	<script src="lib/lib/datatables/DataTables-1.10.23/js/jquery.dataTables.min.js"></script>    
 	<script src="lib/lib/datatables/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
@@ -33,16 +34,29 @@
 </head>
 <body>
 	<div class="container">
-		<div class="mt-4 mb-4 pt-4 pb-4 text-center text-white bg-primary">
-			<h1>CRUD</h1>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="mt-4 mb-4 pt-4 pb-4 text-center text-white bg-primary rounded">
+					<div style="width: 200px;height: 200px;border:8px solid white" class="m-auto bg-primary rounded-pill">
+						<img src="lib/assets/images/ilustartor.svg" width="100%">
+					</div>
+					<h2>Sistem Informasi Geografis</h2>
+				</div>
+			</div>
 		</div>		
 
-		<div class="row">
-			<div class="mt-4 mb-4">
-				<button type="button" class="btn btn-primary" id="create" data-toggle="modal">Tambah Data</button>
-			</div>
-			<div class="mt-4 mb-4 ml-3">
-				<a href="map.php" target="_blank"><button type="button" class="btn btn-primary">Lihat Data Map</button></a>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<div>
+					<button type="button" class="btn btn-primary btn-sm" id="create" data-toggle="modal">
+						<i class="fa fa-plus mr-1" aria-hidden="true"></i> Tambah Data
+					</button> 
+					<a href="map.php" target="_blank">
+						<button type="button" class="btn btn-primary btn-sm">
+							<i class="fa fa-map mr-1" aria-hidden="true"></i> Lihat Data Map
+						</button>
+					</a>
+				</div>
 			</div>
 		</div>		
 
@@ -55,6 +69,8 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
+					
+					
 					<div class="modal-body">
 						<form name="formData" id="formData">
 							<div class="col-md-12">
@@ -105,8 +121,10 @@
 
 								<form name="formDelete" id="formDelete">
 									<input type="hidden" name="id" id="idDel">
-									<h3>Ingin Menghapus Data <strong id="datas"></strong>?</h3>
-									<button class="btn btn-danger btn-sm" id="deleteBtn" style="width: 100%">Hapus</button>
+									<h6>Ingin Menghapus Data <strong id="datas"></strong>?</h6>
+									<div class="text-right">
+										<button class="btn btn-danger btn-sm" id="deleteBtn" >Hapus</button>
+									</div>
 								</form>
 							</div>
 						</div>
