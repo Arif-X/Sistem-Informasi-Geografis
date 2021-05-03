@@ -72,7 +72,7 @@
 					
 					
 					<div class="modal-body">
-						<form name="formData" id="formData">
+						<form name="formData" id="formData" enctype="multipart/form-data">
 							<div class="col-md-12">
 								<input type="hidden" name="id" id="id" value>
 
@@ -98,7 +98,12 @@
 									<input type="hidden" name="longitude" id="longitude">							
 								</div>																
 
-								<button class="btn btn-primary btn-sm" id="saveBtn" style="width: 100%">Simpan</button>
+								<div class="form-group">
+									<label for="">Foto (Opsional)</label>
+									<input type="file" name="upload" id="upload" class="form-control">
+								</div>
+
+								<button class="btn btn-primary btn-sm" name="save" id="saveBtn" style="width: 100%">Simpan</button>
 							</div>
 						</form>								
 					</div>
@@ -198,7 +203,7 @@
 					success: function(data) {     
 						if (data) {
 
-							document.getElementById("map").innerHTML = "";
+							document.getElementById("map").innerHTML = '';
 
 							var map = new mapboxgl.Map({
 								container: 'map',
@@ -347,16 +352,30 @@
 
 			$('#saveBtn').click(function (e) {
 				e.preventDefault();
+				const upload = $('#upload').prop('files')[0];
+
+				let formData = new FormData();
+				formData.append('upload', upload);
+				formData.append('id', $('#id').val());
+				formData.append('nama', $('#nama').val());
+				formData.append('alamat', $('#alamat').val());
+				formData.append('tipe', $('#tipe').val());
+				formData.append('latitude', $('#latitude').val());
+				formData.append('longitude', $('#longitude').val());
 
 				$.ajax({
 					data: $('#formData').serialize(),
 					url: "backend/hotel/create-or-update.php",
 					type: "POST",
 					dataType: 'json',
+					data: formData,
+					cache: false,
+					processData: false,
+					contentType: false,				
 					success: function (data) {
 						$('#longitude').val('');
 						$('#latitude').val('');
-						$('#formData').trigger("reset");		
+						$('#formData').trigger("reset");
 						$('#myModal').modal('hide');
 						tabel.draw();
 					},
