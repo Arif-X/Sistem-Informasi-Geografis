@@ -62,7 +62,7 @@
                                     "type": "Feature",
                                     "properties": {
                                         "title": "'. $row['nama'] .'",
-                                        "description": "<strong>'. $row['nama'] .'</strong><br>'. $row['alamat'] .'",
+                                        "description": "<strong>'. $row['nama'] .'</strong><br>'. $row['alamat'] .'<br><img class=img-fluid src=' . $row['foto'] . ' style=width:100%; height:auto>",
                                         "marker-color": "#f86767",
                                         "marker-size": "large",
                                         "marker-symbol": "star"
