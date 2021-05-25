@@ -14,7 +14,7 @@ $tipe = $_POST['tipe'];
 $latitude = $_POST['latitude'];
 $longitude = $_POST['longitude'];
 
-if (!empty($upload)){
+if ($_FILES['upload']['tmp_name']!=''){
 
 	$upload = $_FILES['upload']['tmp_name'];
 	$ImageName = $_FILES['upload']['name'];
@@ -24,9 +24,9 @@ if (!empty($upload)){
 	$ImageExt = str_replace('.','',$ImageExt);
 	$ImageName = preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
 	$NewImageName = str_replace(' ', '', $acak.'.'.$ImageExt);
-	$filePath = $temp . $NewImageName;
+	$filePath = 'files/' . $NewImageName;
 
-	move_uploaded_file($temp, $NewImageName);
+	move_uploaded_file($_FILES['upload']['tmp_name'], __DIR__.'/../../files/'.$NewImageName);
 
 	$check = mysqli_query($connect, "SELECT * FROM markers WHERE id='$id'");
 
@@ -40,12 +40,12 @@ if (!empty($upload)){
 		header('Content-Type: application/json');
 		echo json_encode($result); 
 	}
-} elseif (empty($upload)) {
+} else {
 	$check = mysqli_query($connect, "SELECT * FROM markers WHERE id='$id'");
 
 	if($check->num_rows == 0){
 		$username = $_SESSION['username'];
-		$result = mysqli_query($connect, "INSERT INTO markers(`username`, `nama`, `alamat`, `longitude`, `latitude`, `tipe`, `foto`) VALUES ('$username', '$nama', '$alamat', '$longitude', '$latitude', '$tipe')");
+		$result = mysqli_query($connect, "INSERT INTO markers(`username`, `nama`, `alamat`, `longitude`, `latitude`, `tipe`) VALUES ('$username', '$nama', '$alamat', '$longitude', '$latitude', '$tipe')");
 		header('Content-Type: application/json');
 		echo json_encode($result); 
 	} else {

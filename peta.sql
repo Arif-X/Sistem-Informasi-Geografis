@@ -35,7 +35,7 @@ CREATE TABLE `markers` (
   `longitude` double DEFAULT NULL,
   `latitude` double DEFAULT NULL,
   `tipe` varchar(50) NOT NULL,
-  `foto` longblob DEFAULT '../../files/default.jpg'
+  `foto` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

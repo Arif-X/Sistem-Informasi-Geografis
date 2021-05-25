@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>SIG Stadion di Kalimantan Selatan</title>
+    <title>Hotel dan Villa Malang/Batu</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
@@ -29,7 +29,7 @@
         var map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [115.45, -2.9102], // starting position
+            center: [112.63033862807194, -7.982580467907199], // starting position
             zoom: 7 // starting zoom
         });
 

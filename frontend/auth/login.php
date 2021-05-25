@@ -12,31 +12,6 @@ include('../../backend/auth/auth.php');
 	<link href="../../lib/lib/datatables/FixedColumns-3.3.2/css/fixedColumns.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-success">
-		<strong><a class="navbar-brand text-white" href="../../">SIG</a></strong>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				
-			</ul>
-			<div class="my-2 my-lg-0">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<strong><a class="nav-link text-white" href="register.php">Register <span class="sr-only"></span></a></strong>
-					</li>
-					<li class="nav-item">
-						<strong class="nav-link text-white">|<span class="sr-only"></span></strong>
-					</li>
-					<li class="nav-item active">
-						<strong><a class="nav-link text-white" href="login.php">Login <span class="sr-only"></span></a></strong>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
 	<div style="padding-top: 60px;">	
 		<div class="row">
@@ -57,12 +32,12 @@ include('../../backend/auth/auth.php');
 								<label>Password</label>
 								<input type="password" name="password" class="form-control">
 							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-success" name="login" style="width:100%;">Login</button>
-							</div>
 							<p>
-								Not yet a member? <a href="register.php">Sign up</a>
+								Belum punya akun? <a href="register.php">Daftar sekarang</a>
 							</p>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success w-100" name="login">Login</button>
+							</div>
 						</form>
 					</div>
 				</div>

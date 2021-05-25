@@ -28,6 +28,7 @@ if (isset($_GET['logout'])) {
 	<link href="lib/mapbox/css/style.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
 	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+	<title>Hotel dan Villa Malang/Batu</title>
 	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>		
@@ -69,6 +70,7 @@ if (isset($_GET['logout'])) {
 							<i class="fa fa-map mr-1" aria-hidden="true"></i> Lihat Data Map
 						</button>
 					</a>
+					<a href="backend/auth/logout.php" class="btn btn-danger btn-sm">Logout</a>
 				</div>
 			</div>
 		</div>		
